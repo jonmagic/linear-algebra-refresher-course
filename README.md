@@ -1,4 +1,14 @@
-## Getting started
+# Linear Algebra Refresher Course
+
+My notes and code for the [linear algebra refresher course on Udacity](https://classroom.udacity.com/courses/ud953).
+
+## Run Tests
+
+```bash
+$ script/test
+```
+
+## Setup For Quizzes
 
 ```bash
 $ irb
@@ -7,12 +17,6 @@ $ irb
 ```ruby
 require_relative "lib/larc"
 require "matrix"
-```
-
-## Run Tests
-
-```bash
-$ script/test
 ```
 
 ## 1. Vectors
