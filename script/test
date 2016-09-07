@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+Dir["test/*_test.rb"].each {|path| require_relative "../#{path}" }
