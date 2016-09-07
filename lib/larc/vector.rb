@@ -62,5 +62,20 @@ module Larc
     def degrees(vector)
       (radians(vector) * (180 / Math::PI))
     end
+
+    def parallel(vector)
+      if coordinates.uniq == [0] || vector.coordinates.uniq == [0]
+        return true
+      end
+
+      scalar = coordinates.first / vector.coordinates.first
+
+      (vector * scalar).coordinates.map {|coordinate| coordinate.round(3) } ==
+      self.coordinates.map {|coordinate| coordinate.round(3) }
+    end
+
+    def orthogonal(vector)
+      inner_product(vector).round(3) == 0.0
+    end
   end
 end
