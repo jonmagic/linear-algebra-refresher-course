@@ -8,3 +8,9 @@ $ irb
 require_relative "lib/larc"
 require "matrix"
 ```
+
+## Run Tests
+
+```bash
+$ ruby test/*_test.rb
+```
