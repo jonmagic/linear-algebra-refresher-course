@@ -41,5 +41,26 @@ module Larc
         coordinates: coordinates.each_with_index.map {|coordinate, i| (coordinate * vector.coordinates[i]) }
       })
     end
+
+    def inner_product(vector)
+      coordinates.
+        each_with_index.
+        map {|coordinate, i| (coordinate * vector.coordinates[i]) }.
+        inject(0) {|sum, value| sum + value }
+    end
+
+    def magnitude
+      Math.sqrt coordinates.inject(0) {|sum, coordinate|
+        sum + coordinate * coordinate
+      }
+    end
+
+    def radians(vector)
+      Math.acos(inner_product(vector) / (magnitude * vector.magnitude))
+    end
+
+    def degrees(vector)
+      (radians(vector) * (180 / Math::PI))
+    end
   end
 end
